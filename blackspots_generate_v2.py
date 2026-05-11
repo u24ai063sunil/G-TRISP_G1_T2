@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 
 # ── Load DBSCAN-labelled data ──────────────────────────────────────────────
-df = pd.read_csv("crash_data_dbscan.csv")
+df = pd.read_csv("crash_data_dbscan_v2.csv")
 print(f"Loaded: {df.shape[0]} rows")
 
 # ── Severity numeric score (re-map in case not present) ───────────────────
@@ -90,9 +90,9 @@ cluster_stats['Lat']          = cluster_stats['Lat'].round(5)
 cluster_stats['Lon']          = cluster_stats['Lon'].round(5)
 
 # ── Save ──────────────────────────────────────────────────────────────────
-cluster_stats.to_csv("blackspots.csv", index=False)
+cluster_stats.to_csv("blackspots_v2.csv", index=False)
 
-print("\n✅  blackspots.csv saved!")
+print("\n✅  blackspots_v2.csv saved!")
 print(f"   Total blackspots : {len(cluster_stats)}")
 print(f"\n   Top 10 blackspots:")
 

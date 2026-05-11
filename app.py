@@ -50,9 +50,12 @@ st.markdown("""
 @st.cache_data
 def load_data():
     base = os.path.dirname(__file__)
-    df      = pd.read_csv(os.path.join(base, "crash_data_clean.csv"))
-    df_sp   = pd.read_csv(os.path.join(base, "crash_data_dbscan.csv"))
-    bs      = pd.read_csv(os.path.join(base, "blackspots.csv"))
+    # df      = pd.read_csv(os.path.join(base, "crash_data_clean.csv"))
+    # df_sp   = pd.read_csv(os.path.join(base, "crash_data_dbscan.csv"))
+    # bs      = pd.read_csv(os.path.join(base, "blackspots.csv"))
+    df      = pd.read_csv(os.path.join(base, "crash_data_v2.csv"))
+    df_sp   = pd.read_csv(os.path.join(base, "crash_data_dbscan_v2.csv"))
+    bs      = pd.read_csv(os.path.join(base, "blackspots_v2.csv"))
     Z       = np.load(os.path.join(base, "kde_Z.npy"))
     lat_g   = np.load(os.path.join(base, "kde_lat_grid.npy"))
     lon_g   = np.load(os.path.join(base, "kde_lon_grid.npy"))
@@ -444,12 +447,12 @@ with tab5:
 - **eps = 15 km** — crashes within 15 km are considered the same cluster
 - **min_samples = 4** — minimum 4 accidents to form a cluster
 - **Metric** — haversine (accurate for lat/lon coordinates)
-- **Result** — 108 clusters identified from 1,436 geotagged accidents
+- **Result** — 60 clusters identified from 975 geotagged accidents
 
 #### Files
-- `crash_data_clean.csv` — cleaned full dataset (1500 rows)
-- `crash_data_dbscan.csv` — with DBSCAN cluster labels (1436 rows)
-- `blackspots.csv` — ranked blackspot table (108 clusters)
+- `crash_data_v2.csv` — cleaned full dataset (975 rows)
+- `crash_data_dbscan_v2.csv` — with DBSCAN cluster labels (975 rows)
+- `blackspots_v2.csv` — ranked blackspot table (60 clusters)
 - `kde_Z.npy`, `kde_lat_grid.npy`, `kde_lon_grid.npy` — KDE surface arrays
 
 #### How to Use

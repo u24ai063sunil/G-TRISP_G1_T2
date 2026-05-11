@@ -16,7 +16,7 @@ from sklearn.cluster import DBSCAN
 from scipy.stats import gaussian_kde
 
 # ── Load cleaned data ──────────────────────────────────────────────────────
-df = pd.read_csv("crash_data_clean.csv")
+df = pd.read_csv("crash_data_v2.csv")
 print(f"Loaded: {df.shape[0]} rows")
 
 # ── Keep only rows with valid coordinates ─────────────────────────────────
@@ -97,7 +97,7 @@ print(f"\nKDE computed on {len(lat)} points, bw=0.08, grid=200×200")
 print(f"  Density range: {Z.min():.6f} – {Z.max():.6f}")
 
 # ── Save outputs ───────────────────────────────────────────────────────────
-df_spatial.to_csv("crash_data_dbscan.csv", index=False)
+df_spatial.to_csv("crash_data_dbscan_v2.csv", index=False)
 np.save("kde_Z.npy",        Z)
 np.save("kde_lat_grid.npy", lat_grid)
 np.save("kde_lon_grid.npy", lon_grid)

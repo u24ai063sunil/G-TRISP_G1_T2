@@ -25,8 +25,8 @@ The dashboard opens at `http://localhost:8501` in your browser.
 crash_dashboard/
 ├── app.py                   ← Main Streamlit dashboard
 ├── requirements.txt         ← Python dependencies
-├── crash_data_clean.csv     ← Cleaned full dataset (1500 rows, 35 cols)
-├── crash_data_dbscan.csv    ← Dataset with DBSCAN cluster labels (1436 rows)
+├── crash_data_clean.csv     ← Cleaned full dataset (975 rows, 35 cols)
+├── crash_data_dbscan.csv    ← Dataset with DBSCAN cluster labels (975 rows)
 ├── blackspots.csv           ← Ranked blackspot table (108 clusters)
 ├── kde_Z.npy                ← KDE density surface (200×200 grid)
 ├── kde_lat_grid.npy         ← Latitude grid for KDE
